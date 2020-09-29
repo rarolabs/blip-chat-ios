@@ -53,7 +53,7 @@ internal class ThreadViewController: UIViewController, WKNavigationDelegate, UIS
             resourcesBundle = Bundle(for: type(of: self));
         }
         // Create cancel button
-        let leftArrow = UIImage(named:"leftArrow", in: resourcesBundle, compatibleWith: nil)!;
+        let leftArrow = (UIImage(named:"leftArrow", in: resourcesBundle, compatibleWith: nil) ?? UIImage(named:"leftArrow", in: Bundle.main, compatibleWith: nil))!;
         let cancelButton = UIBarButtonItem(image: leftArrow, style: .plain, target: self, action: #selector(ThreadViewController.handleCancel))
         self.navigationController?.topViewController?.navigationItem.leftBarButtonItem = cancelButton
         self.navigationController?.topViewController?.navigationItem.title = self.options.windowTitle
